@@ -1,0 +1,30 @@
+#welcome-content-area {
+    display: flex;
+}
+
+#welcome-divs-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 2vw;
+}
+
+#welcome-h2 {
+    font-size: 8vw;
+    margin: 0;
+}
+
+#definition-txt {
+    font-size: 1.5vw;
+    margin: 0;
+    color: var(--grey-2);
+}
+
+#about-txt {
+    font-size: 3.5vw;
+}
+
+#welcome-img {
+    width: 25vw;
+    margin: 7vh;
+}

@@ -1,15 +1,16 @@
 :root {
     --white: #f5f5f5;
-    --grey-1: #808080;
-    --grey-2: #525252;
-    --black: #383838;
+    --grey-1: #dfdfdf;
+    --grey-2: #818181;
+    --grey-3: #525252;
+    --black: #454545;
 }
 
 * {
     background-color: var(--white);
     width: 100%;
     font-family: 'Nunito', sans-serif;
-    color: var(--grey-2);
+    color: var(--grey-3);
 }
 
 body {
@@ -18,7 +19,6 @@ body {
     justify-content: center;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Melodrama', serif;
-    font-size: 1.7vw;
 }

@@ -20,7 +20,7 @@ export default function AuthPage({ setUser }) {
   return (
     <main id='auth-page'>
       <nav id='auth-nav'>
-        <h1 onClick={() => setPageContent('welcome')}>meraki planner</h1>
+        <h1 id='auth-h1' onClick={() => setPageContent('welcome')}>meraki planner</h1>
 
         <div id='nav-btn-div'>
           <button className='nav-btn' onClick={() => setPageContent('signUp')}>sign up</button>
