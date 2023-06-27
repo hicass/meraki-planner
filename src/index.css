@@ -11,6 +11,7 @@
     width: 100%;
     font-family: 'Nunito', sans-serif;
     color: var(--grey-3);
+    box-sizing:border-box
 }
 
 body {

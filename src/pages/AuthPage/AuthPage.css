@@ -41,8 +41,8 @@
 }
 
 #auth-content {
-    height: 40%;
-    width: 90%;
+    height: 80vh;
+    width: 85vw;
     border: 6px solid var(--black);
     border-radius: 10px;
 }

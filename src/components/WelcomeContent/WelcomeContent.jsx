@@ -14,7 +14,7 @@ export default function WelcomeContent() {
                     </p>
                 </div>
 
-                <div>
+                <div id='about-txt-div'>
                     <p id='about-txt'>
                         A Project Planner built by a Developer, for Developers to 
                          help bring their dream projects to life.

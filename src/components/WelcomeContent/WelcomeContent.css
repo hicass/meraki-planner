@@ -20,11 +20,16 @@
     color: var(--grey-2);
 }
 
+#about-txt-div {
+    overflow: hidden;
+}
+
 #about-txt {
-    font-size: 3.5vw;
+    font-size: 3vw;
+    margin: 0;
 }
 
 #welcome-img {
-    width: 25vw;
+    width: 22vw;
     margin: 7vh;
 }
