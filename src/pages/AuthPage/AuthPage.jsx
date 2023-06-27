@@ -1,18 +1,36 @@
 import { useState } from 'react';
+import WelcomeContent from '../../components/WelcomeContent/WelcomeContent';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
-  const [showSignUp, setShowSignUp] = useState(false);
+  const [pageContent, setPageContent] = useState('welcome');
+
+  function renderContent(){
+    if (pageContent === 'welcome') {
+      return <WelcomeContent />
+    } else if (pageContent === 'signUp') {
+      return <SignUpForm />
+    } else if (pageContent === 'logIn') {
+      return <LoginForm />
+    }
+  }
+
   return (
-    <main>
-      <h1>AuthPage</h1>
-      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
-      { showSignUp ?
-          <SignUpForm setUser={setUser} />
-          :
-          <LoginForm setUser={setUser} />
-      }
+    <main id='auth-page'>
+      <nav id='auth-nav'>
+        <h1 onClick={() => setPageContent('welcome')}>meraki planner</h1>
+
+        <div id='nav-btn-div'>
+          <button className='nav-btn' onClick={() => setPageContent('signUp')}>sign up</button>
+          <button className='nav-btn' onClick={() => setPageContent('logIn')}>log in</button>
+        </div>
+      </nav>
+
+      <section id='auth-content'>
+        { renderContent() }
+      </section>
     </main>
   );
 }

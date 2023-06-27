@@ -1,0 +1,38 @@
+#auth-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#auth-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 97vw;
+    margin-left: 1vw;
+}
+
+#nav-btn-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-btn {
+    font-size: 1.5vw;
+    height: 3vw;
+    width: 8vw;
+    padding: 0;
+    border: 0;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+}
+
+#auth-content {
+    height: 80vh;
+    width: 95vw;
+    border: 6px solid var(--black);
+    border-radius: 15px;
+}
