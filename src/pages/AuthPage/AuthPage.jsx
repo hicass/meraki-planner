@@ -11,9 +11,9 @@ export default function AuthPage({ setUser }) {
     if (pageContent === 'welcome') {
       return <WelcomeContent />
     } else if (pageContent === 'signUp') {
-      return <SignUpForm />
+      return <SignUpForm setUser={setUser} />
     } else if (pageContent === 'logIn') {
-      return <LoginForm />
+      return <LoginForm setUser={setUser} />
     }
   }
 

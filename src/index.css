@@ -23,3 +23,63 @@ body {
 h1, h2 {
     font-family: 'Melodrama', serif;
 }
+
+.auth-content-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.auth-content-h2 {
+    font-size: 6vw;
+    margin: 10vh 0 0 8vw;
+}
+
+.auth-content-p {
+    width: fit-content;
+    margin: 3vh 0 0 4vw;
+    font-size: 2vw;
+}
+
+.auth-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 8vw;
+}
+
+.auth-form {
+    border: 3px solid var(--grey-3);
+    border-radius: 5px;
+    padding: 2vw 2vw 3vw;
+    width: 30vw;
+    margin-left: 8vw;
+}
+
+.auth-form-label {
+    font-size: 1.5vw;
+    color: var(--grey-2);
+}
+
+.auth-form-input {
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+    border: 2.5px solid var(--grey-2);
+    border-radius: 5px;
+}
+
+.auth-form-btn {
+    font-size: 1.5vw;
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--grey-3);
+    color: var(--white);
+}
+
+.auth-form-btn:hover {
+    cursor: pointer;
+    background-color: var(--grey-2);
+}
+
+.auth-error-message {
+    font-size: 2vw;
+}
