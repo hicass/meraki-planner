@@ -1,0 +1,49 @@
+nav {
+    border-right: 2px solid var(--grey-2);
+    height: 100vh;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#nav-h1 {
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+#nav-user-info {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-avatar {
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+    border: 2px solid var(--grey-3);
+}
+
+#user-greeting {
+    margin-top: 10%;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    font-family: 'Melodrama', serif;
+}
+
+#nav-links-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50%;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6vw;
+    text-decoration: none;
+}

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as userService from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
+import DashboardPage from '../DashboardPage/DashboardPage';
 import './App.css';
 
 export default function App() {
@@ -16,14 +16,7 @@ export default function App() {
   return (
     <main className="App">
       { user ?
-          <>
-            <h1>You are logged in!</h1>
-            <nav>
-            <span>Welcome, {user.name}</span>
-            &nbsp;&nbsp;
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
-            </nav>
-          </>
+          <DashboardPage user={user} handleLogOut={handleLogOut} />
           :
           <AuthPage setUser={setUser} />
       }

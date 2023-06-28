@@ -83,3 +83,13 @@ h1, h2 {
 .auth-error-message {
     font-size: 2vw;
 }
+
+.nav-btn:hover, #auth-h1:hover, .nav-btn-hover:hover {
+    cursor: pointer;
+    color: var(--black);
+}
+
+.nav-btn:hover, .nav-btn-hover:hover {
+    background-color: var(--grey-1);
+    border-radius: 10px;
+}

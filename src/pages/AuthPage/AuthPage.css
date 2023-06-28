@@ -30,16 +30,6 @@
     border: 0;
 }
 
-.nav-btn:hover, #auth-h1:hover {
-    cursor: pointer;
-    color: var(--black);
-}
-
-.nav-btn:hover {
-    background-color: var(--grey-1);
-    border-radius: 10px;
-}
-
 #auth-content {
     height: 80vh;
     width: 85vw;
