@@ -1,17 +1,4 @@
-import { useState, useEffect } from 'react';
-import * as quoteAPI from '../../utilities/quote-api';
-
-export default function AllProjectsPage() {
-    const [quote, setQuote] = useState({})
-
-    useEffect(function() {
-        async function generateQuote(){
-            const newQuote = await quoteAPI.get();
-            setQuote(newQuote);
-        }
-        generateQuote()
-    }, [])
-
+export default function AllProjectsPage({ quote }) {
     return (
         <section id='all-projects-container'>
             <div>
