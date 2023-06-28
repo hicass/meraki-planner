@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import mothra from '../../assets/mothra.jpg';
 import './NavArea.css'
 
+
 export default function NavArea({ user, handleLogOut, greeting, setDashPageContent }) {
     return (
         <nav id='nav-area'>
@@ -15,7 +16,7 @@ export default function NavArea({ user, handleLogOut, greeting, setDashPageConte
 
                 <div id='nav-links-container'>
                     <Link className='nav-link nav-btn-hover' to='' onClick={() => setDashPageContent('allProjects')}>all projects</Link>
-                    <Link className='nav-link nav-btn-hover' to='' onClick=''>start new</Link>
+                    <Link className='nav-link nav-btn-hover' to='' onClick={() => setDashPageContent('addProject')}>start new</Link>
                 </div>
             </div>
 
