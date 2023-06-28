@@ -7,7 +7,7 @@ import './AuthPage.css'
 export default function AuthPage({ setUser }) {
   const [pageContent, setPageContent] = useState('welcome');
 
-  function renderContent(){
+  function renderContent() {
     if (pageContent === 'welcome') {
       return <WelcomeContent />
     } else if (pageContent === 'signUp') {

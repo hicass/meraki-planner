@@ -2,26 +2,19 @@ import { Link } from 'react-router-dom';
 import mothra from '../../assets/mothra.jpg';
 import './NavArea.css'
 
-export default function NavArea({ user, handleLogOut }) {
-    const greetings = ['Welcome', 'Howdy', 'Hello', 'Hey', 'Hi', 'Heyyy', 'Sup']
-
-    function greetingRandomizer() {
-        const greetingIndex = Math.floor(Math.random() * greetings.length);
-        return greetings[greetingIndex]
-    }
-
+export default function NavArea({ user, handleLogOut, greeting, setDashPageContent }) {
     return (
-        <nav>
+        <nav id='nav-area'>
             <div>
                 <h1 id='nav-h1'>meraki planner</h1>
 
                 <div id='nav-user-info'>
                     <img id='user-avatar' src={mothra} alt='User avatar' />
-                        <span id='user-greeting'>{ greetingRandomizer() }, {user.name}</span>
+                        <span id='user-greeting'>{ greeting }, {user.name}</span>
                 </div>
 
                 <div id='nav-links-container'>
-                    <Link className='nav-link nav-btn-hover' to='' onClick=''>all projects</Link>
+                    <Link className='nav-link nav-btn-hover' to='' onClick={() => setDashPageContent('allProjects')}>all projects</Link>
                     <Link className='nav-link nav-btn-hover' to='' onClick=''>start new</Link>
                 </div>
             </div>
