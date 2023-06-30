@@ -5,6 +5,7 @@ import EasyEdit, { Types } from 'react-easy-edit';
 import MissionCard from '../../components/MissionCard/MissionCard';
 import VisionCard from '../../components/VisionCard/VisionCard';
 import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation';
+import './ProjectDetailPage.css'
 
 
 export default function ProjectDetailPage({ quote }) {
@@ -36,7 +37,7 @@ export default function ProjectDetailPage({ quote }) {
             console.log(deleteConfirmation)
             return <DeleteConfirmation setDeleteConfirmation={setDeleteConfirmation} projectId={projectId}/>
         } else if (deleteConfirmation === false) {
-            return <button onClick={() => setDeleteConfirmation(true)}>delete this project</button>
+            return <button className='delete-btn' onClick={() => setDeleteConfirmation(true)}>delete this project</button>
         } else {
             return <h1>peepee poo pooo</h1>
         }
@@ -44,23 +45,32 @@ export default function ProjectDetailPage({ quote }) {
 
     return (
         <section>
-            <div className='easy-edit-editable-h2'>
-                <EasyEdit 
-                    value={project.name}
-                    type={Types.TEXT}
-                    onSave={saveChanges}
-                />
+
+            <div className='dash-top'>
+                <div className='easy-edit-editable-h2'>
+                    <EasyEdit 
+                        value={project.name}
+                        type={Types.TEXT}
+                        onSave={saveChanges}
+                    />
+                </div>
+
+                <div className='quote-container'>
+                    <p className='quote-text'>{quote.text}</p>
+                    <span className='quote-author'>- {quote.author} -</span>
+                </div>
             </div>
 
-            <div>
-                <p>{quote.text}</p>
-                <span>{quote.author}</span>
+            <div id='project-detail-container'>
+                <MissionCard project={project} />
+                <VisionCard project={project} />
             </div>
 
-            <MissionCard project={project} />
-            <VisionCard project={project} />
+            <div id='todo-container'>
+                <p>jhafkjsdh</p>
+            </div>
 
-            <div>
+            <div id='delete-container'>
                 { renderDelete() }
             </div>
 

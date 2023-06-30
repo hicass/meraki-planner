@@ -11,7 +11,7 @@
     width: 100%;
     font-family: 'Nunito', sans-serif;
     color: var(--grey-3);
-    box-sizing:border-box
+    box-sizing:border-box;
 }
 
 body {
@@ -111,9 +111,14 @@ a {
     border: 0;
 }
 
-.dash-h2, .easy-edit-editable-h2 > * {
+.dash-h2 {
     font-size: 1.5vw;
     margin-left: 2vw;
+}
+
+.easy-edit-editable-h2 > * {
+    margin: 2.5vh 2vw;
+    font-size: 1.6vw;
 }
 
 .dash-top {
@@ -130,7 +135,6 @@ a {
     width: 50vw;
 }
 
-
 .quote-container > * {
     width: 80%;
 }
@@ -146,4 +150,41 @@ a {
     justify-content: flex-end;
     font-weight: bolder;
     font-size: 1.3vw;
+}
+
+.project-detail-card {
+    height: fit-content;
+    width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.project-detail-title {
+    font-size: 1.5vw;
+    margin: 1vw;
+    font-weight: bolder;
+}
+
+.project-detail {
+    border: 2px solid var(--grey-3);
+    border-radius: 5px;
+    font-size: 1.3vw;
+    padding: 0.5vw;
+}
+
+.delete-btn {
+    color: var(--white);
+    background-color: var(--grey-2);
+    border: 0;
+    border-radius: 5px;
+    width: 10vw;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    margin-right: 5%;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
 }

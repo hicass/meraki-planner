@@ -13,13 +13,16 @@ export default function Mission({ project }) {
     }
 
     return (
-        <>
-            <h4>Vision</h4>
-            <EasyEdit 
-                    value={project.vision}
-                    type={Types.TEXTAREA}
-                    onSave={saveChanges}
-            />
-        </>
+        <div className='project-detail-card'>
+            <h4 className='project-detail-title'>Vision</h4>
+
+            <div className='project-detail'>
+                <EasyEdit 
+                        value={project.vision}
+                        type={Types.TEXTAREA}
+                        onSave={saveChanges}
+                />
+            </div>
+        </div>
     )
 }
