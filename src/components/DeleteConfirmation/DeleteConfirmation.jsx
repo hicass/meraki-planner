@@ -8,7 +8,7 @@ export default function DeleteConfirmation({ setDeleteConfirmation, projectId })
         await projectsAPI.deleteProject({
             id: projectId
         })
-        navigate('/')
+        await navigate('/')
     }
 
     return (

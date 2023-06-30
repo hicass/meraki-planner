@@ -1,0 +1,11 @@
+.project-card {
+    border: 1px solid var(--grey-2);
+}
+
+.project-card-name {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5vw;
+    background: none;
+}

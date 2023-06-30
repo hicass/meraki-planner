@@ -1,0 +1,12 @@
+#project-card-container {
+    border-top: 1px solid var(--grey-2);
+    border-bottom: 1px solid var(--grey-2);
+    margin-top: 5%;
+}
+
+#project-card-grid {
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 0;
+}

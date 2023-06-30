@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as projectsAPI from '../../utilities/project-api';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import './AllProjectsPage.css'
 
 
 export default function AllProjectsPage({ quote, setDashPageContent }) {
@@ -17,16 +18,18 @@ export default function AllProjectsPage({ quote, setDashPageContent }) {
     return (
         <section id='all-projects-container'>
             <div>
-                <h2>all projects</h2>
+                <div className='dash-top'>
+                    <h2 className='dash-h2'>all projects</h2>
 
-                <div>
-                    <p>{quote.text}</p>
-                    <span>{quote.author}</span>
+                    <div className='quote-container'>
+                        <p className='quote-text'>{quote.text}</p>
+                        <span className='quote-author'>- {quote.author} -</span>
+                    </div>
                 </div>
 
-                <div>
+                <div id='project-card-container'>
                     { projects.length ?
-                    <div>
+                    <div id='project-card-grid'>
                         {projects.map((project, idx) => (
                             <ProjectCard project={project} key={idx} />
                         ))}
