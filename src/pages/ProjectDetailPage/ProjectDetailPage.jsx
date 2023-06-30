@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import * as projectsAPI from '../../utilities/project-api';
 import EasyEdit, { Types } from 'react-easy-edit';
+import MissionCard from '../../components/MissionCard/MissionCard';
+import VisionCard from '../../components/VisionCard/VisionCard'
 
 
 export default function ProjectDetailPage({ quote }) {
@@ -15,6 +17,7 @@ export default function ProjectDetailPage({ quote }) {
             setProject(userProject);
         }
         renderProject();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     async function saveChanges(newName) {
@@ -30,7 +33,6 @@ export default function ProjectDetailPage({ quote }) {
         <section>
             <div className='easy-edit-editable-h2'>
                 <EasyEdit 
-                    name='name'
                     value={project.name}
                     type={Types.TEXT}
                     onSave={saveChanges}
@@ -42,15 +44,8 @@ export default function ProjectDetailPage({ quote }) {
                 <span>{quote.author}</span>
             </div>
 
-            <div>
-                <h3>Mission</h3>
-                <p>{project.mission}</p>
-            </div>
-
-            <div>
-                <h3>Vision</h3>
-                <p>{project.vision}</p>
-            </div>
+            <MissionCard project={project} />
+            <VisionCard project={project} />
 
         </section>
     )
