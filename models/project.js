@@ -24,8 +24,12 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    vission: {
+    vision: {
         type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
         required: true
     },
     todos: [todoSchema]

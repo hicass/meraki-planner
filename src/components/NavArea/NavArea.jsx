@@ -3,7 +3,7 @@ import mothra from '../../assets/mothra.jpg';
 import './NavArea.css'
 
 
-export default function NavArea({ user, handleLogOut, greeting, setDashPageContent }) {
+export default function NavArea({ user, handleLogOut, greeting }) {
     return (
         <nav id='nav-area'>
             <div>
@@ -15,8 +15,8 @@ export default function NavArea({ user, handleLogOut, greeting, setDashPageConte
                 </div>
 
                 <div id='nav-links-container'>
-                    <Link className='nav-link nav-btn-hover' to='' onClick={() => setDashPageContent('allProjects')}>all projects</Link>
-                    <Link className='nav-link nav-btn-hover' to='' onClick={() => setDashPageContent('addProject')}>start new</Link>
+                    <Link className='nav-link nav-btn-hover' to='/'>all projects</Link>
+                    <Link className='nav-link nav-btn-hover' to='/addProject'>start new</Link>
                 </div>
             </div>
 

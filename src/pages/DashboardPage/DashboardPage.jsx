@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'
 import NavArea from '../../components/NavArea/NavArea';
 import AllProjectsPage from '../AllProjectsPage/AllProjectsPage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
@@ -8,7 +9,6 @@ import './DashboardPage.css';
 
 
 export default function DashboardPage({ user, handleLogOut }) {
-    const [dashPageContent, setDashPageContent] = useState('allProjects');
     const [greeting, setGreeting] = useState('');
     const [quote, setQuote] = useState({});
     
@@ -28,21 +28,14 @@ export default function DashboardPage({ user, handleLogOut }) {
         generateQuote();
     }, [])
 
-
-    function renderDash() {
-        if (dashPageContent === 'allProjects') {
-            return <AllProjectsPage quote={quote} setDashPageContent={setDashPageContent} />
-        } else if (dashPageContent === 'projectDetail') {
-            return <ProjectDetailPage />
-        } else if (dashPageContent === 'addProject') {
-            return <AddProjectPage />
-        }
-    }
-
     return (
        <main id='dashboard-container'>
-            <NavArea user={user} setDashPageContent={setDashPageContent} greeting={greeting} handleLogOut={handleLogOut}  />
-            { renderDash() }
+            <NavArea user={user} greeting={greeting} handleLogOut={handleLogOut}  />
+            <Routes>
+                <Route path='/' element={<AllProjectsPage quote={quote} />} />
+                <Route path='/projects/:projectId' element={<ProjectDetailPage quote={quote} />} />
+                <Route path='/addProject' element={<AddProjectPage />} />
+            </Routes>
        </main>
     )
 }

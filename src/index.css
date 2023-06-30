@@ -20,8 +20,8 @@ body {
     justify-content: center;
 }
 
-h1, h2 {
-    font-family: 'Melodrama', serif;
+h1, h2,.easy-edit-editable-h2 > * {
+    font-family: 'Melodrama', serif !important; 
 }
 
 .auth-content-area {
@@ -48,7 +48,7 @@ h1, h2 {
 }
 
 .auth-form {
-    border: 3px solid var(--grey-3);
+    border: 2px solid var(--grey-3);
     border-radius: 5px;
     padding: 2vw 2vw 3vw;
     width: 30vw;
@@ -63,7 +63,7 @@ h1, h2 {
 .auth-form-input {
     margin-bottom: 1vw;
     font-size: 1.5vw;
-    border: 2.5px solid var(--grey-2);
+    border: 1.5px solid var(--grey-2);
     border-radius: 5px;
 }
 
@@ -75,7 +75,7 @@ h1, h2 {
     color: var(--white);
 }
 
-.auth-form-btn:hover {
+.auth-form-btn:hover, .add-proj-btn:hover {
     cursor: pointer;
     background-color: var(--grey-2);
 }
@@ -92,4 +92,17 @@ h1, h2 {
 .nav-btn:hover, .nav-btn-hover:hover {
     background-color: var(--grey-1);
     border-radius: 10px;
+}
+
+.add-proj-btn {
+    color: var(--white);
+    background-color: var(--grey-3);
+    border: 0;
+    border-radius: 5px;
+    width: 20vw;
+    font-size: 1.8vw;
+}
+
+.easy-edit-component-wrapper > * {
+    border: 0;
 }

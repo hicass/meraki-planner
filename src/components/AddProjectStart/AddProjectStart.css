@@ -1,0 +1,19 @@
+#add-proj-start-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#add-proj-start-h2 {
+    font-size: 6vw;
+    display: flex;
+    justify-content: center;
+    margin: 15vh 0 0 0;
+}
+
+#add-proj-start-p {
+    font-size: 3vw;
+    width: 60%;
+    margin-bottom: 10vh;
+    text-align: center;
+}

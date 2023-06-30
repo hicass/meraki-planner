@@ -27,7 +27,8 @@ const port = process.env.PORT || 3001;
 app.use('/api/users', require('./routes/api/users'));
 
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/quotes', require('./routes/api/quotes'));
+app.use('/api/quotes', ensureLoggedIn, require('./routes/api/quotes'));
+app.use('/api/projects', ensureLoggedIn, require('./routes/api/projects'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

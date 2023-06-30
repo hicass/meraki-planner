@@ -1,32 +1,43 @@
 import { useState } from 'react';
-import AddProjectStart from "../../components/AddProjectStart/AddProjectStart";
-import AddProjectName from '../../components/AddProjectName/AddProjectName';
-import AddProjectMission from '../../components/AddProjectMission/AddProjectMission';
-import AddProjectVision from '../../components/AddProjectVision/AddProjectVision';
+import * as projectAPI from '../../utilities/project-api';
+import AddProjectStart from '../../components/AddProjectStart/AddProjectStart';
+import AddProjectInfo from '../../components/AddProjectInfo/AddProjectInfo';
+import './AddProjectPage.css'
 
 
 export default function AddProjectPage() {
     const [addProjectPageContent, setAddProjectPageContent] = useState('start');
+    const [newProjectInfo, setNewProjectInfo] = useState({
+        name: '',
+        mission: '',
+        vision: '',
+    });
 
     function renderAddProjectPage() {
         if (addProjectPageContent === 'start') {
-            console.log(addProjectPageContent)
             return <AddProjectStart setAddProjectPageContent={setAddProjectPageContent} />
-        } else if (addProjectPageContent === 'addName') {
-            console.log(addProjectPageContent)
-            return <AddProjectName setAddProjectPageContent={setAddProjectPageContent} />
-        } else if (addProjectPageContent === 'addMission') {
-            console.log(addProjectPageContent)
-            return <AddProjectMission setAddProjectPageContent={setAddProjectPageContent} />
-        } else if (addProjectPageContent === 'addVision') {
-            console.log(addProjectPageContent)
-            return <AddProjectVision setAddProjectPageContent={setAddProjectPageContent} />
-        }
+        } else if (addProjectPageContent === 'addInfo') {
+            return <AddProjectInfo newProjectInfo={newProjectInfo} handleChange={handleChange} handleSubmit={handleSubmit} />
+        } 
     }    
 
+    function handleChange(evt) {
+        setNewProjectInfo({
+            ...newProjectInfo,
+            [evt.target.name]: evt.target.value
+        });
+        console.log(newProjectInfo)
+    }
+
+    async function handleSubmit(evt) {
+        evt.preventDefault();
+        console.log(newProjectInfo);
+        await projectAPI.addProject(newProjectInfo);
+    }
+
     return (
-        <section>
-            { renderAddProjectPage() }
+        <section id='add-proj-container'>
+                { renderAddProjectPage() }
         </section>
     )
 }
