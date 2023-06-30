@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     addProject,
-    update
+    update,
+    deleteProject
 }
 
 async function index(req, res) {
@@ -20,9 +21,7 @@ async function show(req, res) {
 async function addProject(req, res) {
     req.body.user = req.user._id;
     try {
-        await Project.create(req.body);
-        const project = await Project.findOne({ 'name': req.body.name});
-        console.log(project._id)
+        const project = await Project.create(req.body);
         res.json(project)
     } catch (err) {
         console.log(err);
@@ -35,5 +34,13 @@ async function update(req, res) {
         await project.updateOne(req.body.attributes);
     } catch (err) {
         console.log(err);
+    }
+}
+
+async function deleteProject(req, res) {
+    try {
+        await Project.findOneAndDelete({ '_id': req.body.id })
+    } catch (err) {
+        console.log(err)
     }
 }

@@ -28,18 +28,15 @@ export default function AddProjectPage() {
             ...newProjectInfo,
             [evt.target.name]: evt.target.value
         });
-        console.log(newProjectInfo)
     }
 
- 
 
     async function handleSubmit(evt) {
         evt.preventDefault();
-        console.log(newProjectInfo);
         const project = await projectAPI.addProject(newProjectInfo);
-        console.log('found id:', project._id)
         navigate(`/projects/${project._id}`, {state:{projectId: project._id}});
     }
+    
 
     return (
         <section id='add-proj-container'>
