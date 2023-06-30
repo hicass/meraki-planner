@@ -13,7 +13,6 @@ export function addProject(newProjectInfo) {
     return sendRequest(`${BASE_URL}/new`, 'POST', newProjectInfo);
 }
 
-export function updateName(newName) {
-    console.log(newName)
-    return sendRequest(`${BASE_URL}/name`, 'PUT', newName);
+export function update(changes) {
+    return sendRequest(`${BASE_URL}/name`, 'PUT', changes);
 }

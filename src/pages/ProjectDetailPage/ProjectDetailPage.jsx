@@ -8,7 +8,6 @@ export default function ProjectDetailPage({ quote }) {
     const location = useLocation();
     const [project, setProject] = useState({})
     const { projectId } = location.state
-    const [editedProject, setEditedProject] = useState({})
     
     useEffect(function() {
         async function renderProject() {
@@ -16,10 +15,15 @@ export default function ProjectDetailPage({ quote }) {
             setProject(userProject);
         }
         renderProject();
-    }, [editedProject]);
+    },[]);
 
     async function saveChanges(newName) {
-        const userProject = await projectsAPI.updateName({newName, projectId});
+        await projectsAPI.update({
+            id: projectId,
+            attributes: {
+                name: newName
+            }
+        });
     }
 
     return (
