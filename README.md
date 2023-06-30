@@ -12,14 +12,12 @@ Meraki Planner offers a user-friendly interface, empowering you to set goals, tr
 
 ## Tech Stack
 
-- MongoDB
-- Mongoose
-- Express
-- React
-- Node.js
+**Client:** React, CSS, HTML
+
+**Server:** Node, Express, MongoDB, Mongoose
 
 
-## Planning Materials for Meraki Planner
+## Getting Started
 
 Check out this projects [Notion Page](https://climbing-port-995.notion.site/Meraki-Planner-5f0a61ab13a6436692154070ccc9e6ed)
 
