@@ -4,6 +4,7 @@ import * as projectsAPI from '../../utilities/project-api';
 import EasyEdit, { Types } from 'react-easy-edit';
 import MissionCard from '../../components/MissionCard/MissionCard';
 import VisionCard from '../../components/VisionCard/VisionCard';
+import Todos from '../../components/Todos/Todos'
 import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation';
 import './ProjectDetailPage.css'
 
@@ -11,17 +12,20 @@ import './ProjectDetailPage.css'
 export default function ProjectDetailPage({ quote }) {
     const location = useLocation();
     const [project, setProject] = useState({});
-    const [deleteConfirmation, setDeleteConfirmation] = useState(false)
-    const { projectId } = location.state
+    const [todosStatus, setTodosStatus] = useState([])
+    const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+    const { projectId } = location.state;
+    
     
     useEffect(function() {
         async function renderProject() {
             const userProject = await projectsAPI.getById(projectId);
             setProject(userProject);
+            setTodosStatus(userProject.todosStatus)
+            console.log(todosStatus)
         }
         renderProject();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    },[]);
 
     async function saveChanges(newName) {
         await projectsAPI.update({
@@ -38,9 +42,7 @@ export default function ProjectDetailPage({ quote }) {
             return <DeleteConfirmation setDeleteConfirmation={setDeleteConfirmation} projectId={projectId}/>
         } else if (deleteConfirmation === false) {
             return <button className='delete-btn' onClick={() => setDeleteConfirmation(true)}>delete this project</button>
-        } else {
-            return <h1>peepee poo pooo</h1>
-        }
+        } 
     }
 
     return (
@@ -67,7 +69,7 @@ export default function ProjectDetailPage({ quote }) {
             </div>
 
             <div id='todo-container'>
-                <p>jhafkjsdh</p>
+                <Todos todosStatus={todosStatus} />
             </div>
 
             <div id='delete-container'>
