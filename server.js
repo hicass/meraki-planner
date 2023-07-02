@@ -29,6 +29,7 @@ app.use('/api/users', require('./routes/api/users'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/quotes', ensureLoggedIn, require('./routes/api/quotes'));
 app.use('/api/projects', ensureLoggedIn, require('./routes/api/projects'));
+app.use('/api/todos', ensureLoggedIn, require('./routes/api/todos'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

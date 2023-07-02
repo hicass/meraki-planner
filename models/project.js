@@ -5,6 +5,11 @@ const todoSchema = new Schema({
     text: {
         type: String,
         required: true
+    },
+    status: {
+        type: String,
+        enum: ['backlog', 'committedBacklog', 'inProgress', 'done'],
+        default: 'backlog'
     }
 }, {
     timestamps: true
@@ -27,31 +32,7 @@ const projectSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
-    todosStatus: {
-        type: Array,
-        default: [
-            {
-                title: 'Back Log',
-                todos: [todoSchema]
-            },
-
-            {
-                title: 'Committed Back Log',
-                todos: [todoSchema]
-                
-            },
-            {
-                title: 'In Progress',
-                todos: [todoSchema]
-            
-            },
-            {
-                title: 'Done',
-                todos: [todoSchema]
-            
-            } 
-        ]
-    }
+    todos: [todoSchema]
 }, {
     timestamps: true
 });

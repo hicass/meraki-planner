@@ -1,5 +1,13 @@
-export default function StatusColumn({ statusColumn }) {
-    console.log(statusColumn)
+export default function StatusColumn({ backlog }) {
 
-    return <h1>{statusColumn.title}</h1>
+    return (
+        <>
+            <h1>Backlog</h1>
+            <div>
+                {/* {backlog.map((todo, idx) => (
+                    <p>todo</p>
+                ))} */}
+            </div>
+        </>
+    )
 }

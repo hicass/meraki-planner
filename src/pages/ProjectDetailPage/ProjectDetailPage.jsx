@@ -12,7 +12,7 @@ import './ProjectDetailPage.css'
 export default function ProjectDetailPage({ quote }) {
     const location = useLocation();
     const [project, setProject] = useState({});
-    const [todosStatus, setTodosStatus] = useState([])
+    const [todos, setTodos] = useState([]);
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
     const { projectId } = location.state;
     
@@ -21,10 +21,10 @@ export default function ProjectDetailPage({ quote }) {
         async function renderProject() {
             const userProject = await projectsAPI.getById(projectId);
             setProject(userProject);
-            setTodosStatus(userProject.todosStatus)
-            console.log(todosStatus)
+            setTodos(userProject.todos);
         }
         renderProject();
+        // eslint-disable-next-line
     },[]);
 
     async function saveChanges(newName) {
@@ -38,7 +38,6 @@ export default function ProjectDetailPage({ quote }) {
 
     function renderDelete() {
         if (deleteConfirmation === true) {
-            console.log(deleteConfirmation)
             return <DeleteConfirmation setDeleteConfirmation={setDeleteConfirmation} projectId={projectId}/>
         } else if (deleteConfirmation === false) {
             return <button className='delete-btn' onClick={() => setDeleteConfirmation(true)}>delete this project</button>
@@ -69,7 +68,7 @@ export default function ProjectDetailPage({ quote }) {
             </div>
 
             <div id='todo-container'>
-                <Todos todosStatus={todosStatus} />
+                <Todos project={project} projectId={projectId} todos={todos} setTodos={setTodos}/>
             </div>
 
             <div id='delete-container'>
