@@ -4,9 +4,9 @@ import * as projectsAPI from '../../utilities/project-api';
 import EasyEdit, { Types } from 'react-easy-edit';
 import MissionCard from '../../components/MissionCard/MissionCard';
 import VisionCard from '../../components/VisionCard/VisionCard';
-import Todos from '../../components/Todos/Todos'
+import TodosContainer from '../../components/TodosContainer/TodosContainer';
 import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation';
-import './ProjectDetailPage.css'
+import './ProjectDetailPage.css';
 
 
 export default function ProjectDetailPage({ quote }) {
@@ -44,6 +44,7 @@ export default function ProjectDetailPage({ quote }) {
         } 
     }
 
+    
     return (
         <section>
 
@@ -68,7 +69,7 @@ export default function ProjectDetailPage({ quote }) {
             </div>
 
             <div id='todo-container'>
-                <Todos project={project} projectId={projectId} todos={todos} setTodos={setTodos}/>
+                <TodosContainer project={project} projectId={projectId} todos={todos} setTodos={setTodos}/>
             </div>
 
             <div id='delete-container'>

@@ -1,13 +1,22 @@
-export default function StatusColumn({ backlog }) {
+import Todo from '../../components/Todo/Todo';
+
+export default function StatusColumn({ title, todos, filter }) {
 
     return (
-        <>
-            <h1>Backlog</h1>
+        <div>
+            <h4>{title}</h4>
+
+            { todos.length ?
             <div>
-                {/* {backlog.map((todo, idx) => (
-                    <p>todo</p>
-                ))} */}
+                {todos.filter((todo) => {
+                    return todo.status === filter
+                }).map((todo, idx) => (
+                    <Todo key={idx} todo={todo}/>
+                ))}
             </div>
-        </>
+            :
+                <p>nothing here yet...</p>
+            }
+        </div>
     )
 }
