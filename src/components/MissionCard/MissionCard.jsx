@@ -18,9 +18,9 @@ export default function Mission({ project }) {
 
         <div className='project-detail'>
             <EasyEdit 
-                    value={project.mission}
-                    type={Types.TEXTAREA}
-                    onSave={saveChanges}
+                value={project.mission}
+                type={Types.TEXTAREA}
+                onSave={saveChanges}
             />
         </div>
     </div>

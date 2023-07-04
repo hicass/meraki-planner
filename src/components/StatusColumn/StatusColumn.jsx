@@ -2,6 +2,8 @@ import Todo from '../../components/Todo/Todo';
 
 export default function StatusColumn({ title, todos, filter }) {
 
+    
+
     return (
         <div>
             <h4>{title}</h4>
