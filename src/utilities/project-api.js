@@ -14,7 +14,7 @@ export function addProject(newProjectInfo) {
 }
 
 export function update(changes) {
-    return sendRequest(`${BASE_URL}/name`, 'PUT', changes);
+    return sendRequest(`${BASE_URL}/update`, 'PUT', changes);
 }
 
 export function deleteProject(projectId) {

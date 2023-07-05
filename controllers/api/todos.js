@@ -1,7 +1,8 @@
 const Project = require('../../models/project');
 
 module.exports = {
-    addTodo
+    addTodo,
+    update
 }
 
 async function addTodo(req, res) {
@@ -12,5 +13,20 @@ async function addTodo(req, res) {
         res.json(project.todos)
     } catch (err) {
         console.log(err)
+    }
+}
+
+async function update(req, res) {
+    const project = await Project.findOne({'todos._id': req.body.id});
+    try {
+        await Project.updateOne(
+            { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                'todos.$.text': req.body.text
+            }}
+        )
+        res.status(200).json('Successsss!');
+    } catch(err) {
+        console.log(err)
+        res.status(400).json(err)
     }
 }
