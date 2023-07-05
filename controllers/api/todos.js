@@ -2,7 +2,8 @@ const Project = require('../../models/project');
 
 module.exports = {
     addTodo,
-    update
+    update,
+    deleteTodo
 }
 
 async function addTodo(req, res) {
@@ -29,4 +30,17 @@ async function update(req, res) {
         console.log(err)
         res.status(400).json(err)
     }
+}
+
+async function deleteTodo(req, res) {
+   console.log(req.body)
+   const project = await Project.findOne({'todos._id': req.body.id});
+   try {
+        await project.todos.remove(req.body);
+        await project.save();
+        res.status(200).json(project);
+   } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+   }
 }

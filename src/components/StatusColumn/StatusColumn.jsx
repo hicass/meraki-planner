@@ -2,7 +2,7 @@ import Todo from '../../components/Todo/Todo';
 import './StatusColumn.css'
 
 
-export default function StatusColumn({ title, todos, filter }) {
+export default function StatusColumn({ title, todos, filter, setTodos }) {
     return (
         <div className='status-column-div box-shadow'>
             <h4 className='status-column-title'>{title}</h4>
@@ -12,7 +12,7 @@ export default function StatusColumn({ title, todos, filter }) {
                 {todos.filter((todo) => {
                     return todo.status === filter
                 }).map((todo, idx) => (
-                    <Todo key={idx} todo={todo}/>
+                    <Todo key={idx} todo={todo} setTodos={setTodos} />
                 ))}
             </div>
             :

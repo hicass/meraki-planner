@@ -3,7 +3,7 @@ import * as todoAPI from '../../utilities/todo-api'
 import './Todo.css'
 
 
-export default function Todo({ todo, idx }) { 
+export default function Todo({ todo, idx, setTodos }) { 
 
     async function saveChanges(updatedTodo) {
         await todoAPI.update({
@@ -12,17 +12,24 @@ export default function Todo({ todo, idx }) {
         });
     }
 
+    async function deleteTodo(evt) {
+        const updatedTodos = await todoAPI.deleteTodo({
+            id: todo._id
+        });
+        window.location.reload(false);
+    }
+
     return (
         <div className='todo' draggable='true'>
             <EasyEdit 
                 value={todo.text}
                 type={Types.TEXTAREA}
                 onSave={saveChanges}
-                hideDeleteButton={false}
             />
             <div className='todo-btn-div'>
                 <button className='todo-btn'>{'<'}</button>
                 <button className='todo-btn'>{'>'}</button>
+                <button onClick={deleteTodo}>delete</button>
             </div>
         </div>
     )

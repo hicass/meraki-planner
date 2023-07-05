@@ -48,7 +48,7 @@ export default function Todos({ project, projectId, todos, setTodos }) {
             </form>
 
             <div id='status-column-container'>
-                <StatusColumn  title={'Backlog'} todos={todos} filter={'backlog'} />
+                <StatusColumn  title={'Backlog'} todos={todos} filter={'backlog'} setTodos={setTodos} />
                 <StatusColumn title={'Committed Backlog'} todos={todos} filter={'committedBacklog'}/>
                 <StatusColumn title={'In Progress'} todos={todos} filter={'inProgress'}/>
                 <StatusColumn title={'Done'} todos={todos} filter={'done'} />

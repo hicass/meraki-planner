@@ -6,5 +6,9 @@ export function addTodo(newTodo) {
 }
 
 export function update(changes) {
-    return sendRequest(`${BASE_URL}/update`, 'PUT', changes)
+    return sendRequest(`${BASE_URL}/update`, 'PUT', changes);
+}
+
+export function deleteTodo(projectId) {
+    return sendRequest(`${BASE_URL}/${projectId}`, 'DELETE', projectId);
 }
