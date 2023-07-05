@@ -27,7 +27,7 @@ export default function AllProjectsPage({ quote, setDashPageContent }) {
                     </div>
                 </div>
 
-                <div className='box-shadow' id='project-card-container'>
+                <div id='project-card-container'>
                     { projects.length ?
                     <div id='project-card-grid'>
                         {projects.map((project, idx) => (

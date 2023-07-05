@@ -88,7 +88,7 @@ a {
     font-size: 2vw;
 }
 
-.nav-btn:hover, #auth-h1:hover, .nav-btn-hover:hover {
+.nav-btn:hover, #auth-h1:hover, .nav-btn-hover:hover, .delete-btn:hover {
     cursor: pointer;
     color: var(--black);
 }

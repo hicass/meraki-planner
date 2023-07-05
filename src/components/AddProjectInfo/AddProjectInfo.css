@@ -1,5 +1,5 @@
 .project-form {
-    border: 2px solid var(--grey-3);
+    border: 1px solid var(--grey-3);
     border-radius: 5px;
     padding: 2vw 2vw 3vw;
     width: 50vw;
@@ -16,9 +16,10 @@
 
 .project-form-input, .project-form-textarea {
     margin: 1vw;
-    border: 1.5px solid var(--grey-2);
+    border: 1px solid var(--grey-2);
     border-radius: 5px;
     padding: .5vw;
+    font-size: 2vw;
 }
 
 .project-form-input {
