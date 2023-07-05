@@ -12,3 +12,11 @@ export function update(changes) {
 export function deleteTodo(projectId) {
     return sendRequest(`${BASE_URL}/${projectId}`, 'DELETE', projectId);
 }
+
+export function incrementStatus(projectId) {
+    return sendRequest(`${BASE_URL}/incrementStatus`, 'PUT', projectId);
+}
+
+export function decrementStatus(projectId) {
+    return sendRequest(`${BASE_URL}/decrementStatus`, 'PUT', projectId);
+}

@@ -3,7 +3,9 @@ const Project = require('../../models/project');
 module.exports = {
     addTodo,
     update,
-    deleteTodo
+    deleteTodo,
+    incrementStatus,
+    decrementStatus
 }
 
 async function addTodo(req, res) {
@@ -33,7 +35,6 @@ async function update(req, res) {
 }
 
 async function deleteTodo(req, res) {
-   console.log(req.body)
    const project = await Project.findOne({'todos._id': req.body.id});
    try {
         await project.todos.remove(req.body);
@@ -44,3 +45,92 @@ async function deleteTodo(req, res) {
         res.status(400).json(err);
    }
 }
+
+async function incrementStatus(req, res) {
+    const project = await Project.findOne({'todos._id': req.body.id});
+    console.log(req.body)
+    if (req.body.status === 'backlog') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'committedBacklog'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+    if (req.body.status === 'committedBacklog') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'inProgress'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+    if (req.body.status === 'inProgress') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'done'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+}
+
+async function decrementStatus(req, res) {
+    const project = await Project.findOne({'todos._id': req.body.id});
+    console.log(req.body)
+    if (req.body.status === 'committedBacklog') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'backlog'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+    if (req.body.status === 'inProgress') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'committedBacklog'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+    if (req.body.status === 'done') {
+        try {
+            await Project.updateOne(
+                { _id: project._id, 'todos._id': req.body.id}, { $set: {
+                    'todos.$.status': 'inProgress'
+                }}
+            )
+            res.status(200).json('Successsss!');
+        } catch(err) {
+            console.log(err)
+            res.status(400).json(err)
+        }
+    }
+}
+

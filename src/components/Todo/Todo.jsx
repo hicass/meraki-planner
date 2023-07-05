@@ -13,8 +13,24 @@ export default function Todo({ todo, idx, setTodos }) {
     }
 
     async function deleteTodo(evt) {
-        const updatedTodos = await todoAPI.deleteTodo({
+        await todoAPI.deleteTodo({
             id: todo._id
+        });
+        window.location.reload(false);
+    }
+
+    async function incrementStatus() {
+        await todoAPI.incrementStatus({
+            id: todo._id,
+            status: todo.status
+        });
+        window.location.reload(false);
+    }
+
+    async function decrementStatus() {
+        await todoAPI.decrementStatus({
+            id: todo._id,
+            status: todo.status
         });
         window.location.reload(false);
     }
@@ -27,9 +43,9 @@ export default function Todo({ todo, idx, setTodos }) {
                 onSave={saveChanges}
             />
             <div className='todo-btn-div'>
-                <button className='todo-btn'>{'<'}</button>
-                <button className='todo-btn'>{'>'}</button>
-                <button onClick={deleteTodo}>delete</button>
+                <button className='todo-btn' onClick={decrementStatus}>{'<'}</button>
+                <button className='todo-btn' onClick={incrementStatus}>{'>'}</button>
+                <button className='todo-btn' onClick={deleteTodo}>-</button>
             </div>
         </div>
     )
