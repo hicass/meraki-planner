@@ -44,7 +44,7 @@ export default class SignUpForm extends Component {
         </div>
 
         <div className='auth-form-container'>
-          <form className='auth-form' autoComplete='off' onSubmit={this.handleSubmit}>
+          <form className='auth-form box-shadow' autoComplete='off' onSubmit={this.handleSubmit}>
             <label className='auth-form-label'>Name</label>
             <input 
               className='auth-form-input' 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StatusColumn from '../../components/StatusColumn/StatusColumn';
 import * as todoAPI from '../../utilities/todo-api';
+import './TodosContainer.css';
 
 
 export default function Todos({ project, projectId, todos, setTodos }) {
@@ -22,29 +23,37 @@ export default function Todos({ project, projectId, todos, setTodos }) {
             newTodo: newTodo
         });
         setTodos(updatedTodos)
+        setNewTodo({
+            text: ''
+        })
     }
 
     
     return (
         <>
-            <h3>To Dos:</h3>
+            <h3 id='todo-h3'>To Dos:</h3>
 
-            <StatusColumn title={'Backlog'} todos={todos} filter={'backlog'} />
-            <StatusColumn title={'Committed Backlog'} todos={todos} filter={'committedBacklog'}/>
-            <StatusColumn title={'In Progress'} todos={todos} filter={'inProgress'}/>
-            <StatusColumn title={'Done'} todos={todos} filter={'done'} />
-
-            <form onSubmit={handleSubmit}>
-                <label>add to do</label>
+            <form id='todo-form' onSubmit={handleSubmit}>
                 <input 
+                    className='box-shadow'
+                    id='todo-form-text'
                     name='text'
                     type='textarea'
-                    value={newTodo.name}
+                    value={newTodo.text}
                     onChange={handleChange}
+                    placeholder='New To Do...'
                     required
                     />
-                <button type='submit'>submit</button>
+                <button className='box-shadow' id='todo-form-btn' type='submit'>add +</button>
             </form>
+
+            <div id='status-column-container'>
+                <StatusColumn  title={'Backlog'} todos={todos} filter={'backlog'} />
+                <StatusColumn title={'Committed Backlog'} todos={todos} filter={'committedBacklog'}/>
+                <StatusColumn title={'In Progress'} todos={todos} filter={'inProgress'}/>
+                <StatusColumn title={'Done'} todos={todos} filter={'done'} />
+            </div>
+
         </>
     )
 }

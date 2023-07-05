@@ -21,13 +21,13 @@ export default function AllProjectsPage({ quote, setDashPageContent }) {
                 <div className='dash-top'>
                     <h2 className='dash-h2'>all projects</h2>
 
-                    <div className='quote-container'>
+                    <div className='quote-container box-shadow'>
                         <p className='quote-text'>{quote.text}</p>
                         <span className='quote-author'>- {quote.author} -</span>
                     </div>
                 </div>
 
-                <div id='project-card-container'>
+                <div className='box-shadow' id='project-card-container'>
                     { projects.length ?
                     <div id='project-card-grid'>
                         {projects.map((project, idx) => (

@@ -1,0 +1,29 @@
+.todo {
+    border: 0.5px solid var(--grey-3);
+    border-radius: 5px;
+    width: 90%;
+    margin: 0.3vw 0;
+    padding: 0.5vw;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.todo:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.todo-btn-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-btn {
+    width: fit-content;
+    border: 0;
+    padding: 0.2vw 0.5vw;
+}
+
+.todo-btn:hover {
+    cursor: pointer;
+    background-color: var(--grey-1);
+    border-radius: 5px;
+}

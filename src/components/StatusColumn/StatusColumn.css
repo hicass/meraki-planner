@@ -1,0 +1,31 @@
+.status-column-div {
+    border: 1px solid var(--grey-3);
+    border-radius: 5px;
+    background-color: var(--grey-1);
+    margin: 0.5%;
+    width: 19vw;
+    max-height: 54vh;
+    overflow: scroll;
+}
+
+.status-column-div > * {
+    background-color: var(--grey-1);
+}
+
+.status-column-title {
+    font-size: 1.3vw;
+    margin: 0.5vw;
+    width: fit-content;
+}
+
+.status-column-p {
+    font-size: 1vw;
+    margin: 0.5vw;
+    width: fit-content;
+}
+
+.todo-case{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

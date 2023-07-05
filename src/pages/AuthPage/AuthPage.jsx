@@ -28,7 +28,7 @@ export default function AuthPage({ setUser }) {
         </div>
       </nav>
 
-      <section id='auth-content'>
+      <section className='box-shadow' id='auth-content'>
         { renderContent() }
       </section>
     </main>

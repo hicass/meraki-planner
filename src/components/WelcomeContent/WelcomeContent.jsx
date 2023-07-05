@@ -22,7 +22,7 @@ export default function WelcomeContent() {
                 </div>
             </div>
 
-            <img id='welcome-img' src={laptopImg} alt='Laptop with code' />
+            <img className='box-shadow' id='welcome-img' src={laptopImg} alt='Laptop with code' />
         </div>
     )
 }

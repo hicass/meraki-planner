@@ -1,3 +1,7 @@
+#detail-section {
+    overflow: hidden;
+}
+
 #project-detail-container {
     display: grid;
     grid-template-columns: 45% 45%;
@@ -7,10 +11,12 @@
 }
 
 #todo-container {
-    border: 1px solid red;
+    border: 1px solid var(--grey-3);
+    border-radius: 5px;
     height: 50vh;
     margin: 2%;
-    width: 78vw;
+    width: 83vw;
+    height: 68vh;
 }
 
 #delete-container {

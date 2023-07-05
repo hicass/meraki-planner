@@ -16,7 +16,7 @@ export default function Mission({ project }) {
         <div className='project-detail-card'>
         <h4 className='project-detail-title'>Mission</h4>
 
-        <div className='project-detail'>
+        <div className='project-detail box-shadow'>
             <EasyEdit 
                 value={project.mission}
                 type={Types.TEXTAREA}

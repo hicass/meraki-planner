@@ -46,7 +46,7 @@ export default function ProjectDetailPage({ quote }) {
 
     
     return (
-        <section>
+        <section id='details-section'>
 
             <div className='dash-top'>
                 <div className='easy-edit-editable-h2'>
@@ -57,7 +57,7 @@ export default function ProjectDetailPage({ quote }) {
                     />
                 </div>
 
-                <div className='quote-container'>
+                <div className='quote-container box-shadow'>
                     <p className='quote-text'>{quote.text}</p>
                     <span className='quote-author'>- {quote.author} -</span>
                 </div>
@@ -68,7 +68,7 @@ export default function ProjectDetailPage({ quote }) {
                 <VisionCard project={project} />
             </div>
 
-            <div id='todo-container'>
+            <div className='box-shadow' id='todo-container'>
                 <TodosContainer project={project} projectId={projectId} todos={todos} setTodos={setTodos}/>
             </div>
 
