@@ -46,7 +46,6 @@ Check out this projects [Notion Page](https://climbing-port-995.notion.site/Mera
 - Version of the app thats for general user, and not geared towards developers.
 - Wider quote selection
 
-
 ### Unsolved Issues
 
 - Project To Do state rendering not properly set up.
